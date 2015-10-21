@@ -11,10 +11,17 @@ defmodule Website.RegistrationController do
     changeset = User.changeset(%User{}, user_params)
 
     if changeset.valid? do
-      user = Website.Registration.create(changeset, Website.Repo)
-      conn
-      |> put_flash(:info, "Your account was created")
-      |> redirect(to: "/")
+      case Website.Registration.create(changeset, Website.Repo) do
+        {:ok, user} ->
+          conn
+          |> put_flash(:info, "Your account was created")
+          |> put_session(:current_user, user.id)
+          |> redirect(to: "/")
+        {:error, changeset} ->
+          conn
+          |> put_flash(:info, "Unable to create account")
+          |> render("new.html", changeset: changeset)
+        end
     else
       conn
       |> put_flash(:info, "Unable to create account")
