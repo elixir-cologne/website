@@ -26,11 +26,11 @@ form.link, form.button {
 }
 .logo {
   width: 519px;
-  height: 71px;
+  height: 20px;
   display: inline-block;
   margin-bottom: 1em;
-  background-image: url("/images/phoenix.png");
-  background-size: 519px 71px;
+  font-size: 40px;
+  line-height: 40px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
