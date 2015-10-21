@@ -1,6 +1,6 @@
 <div class="jumbotron">
-  <h2>Welcome to Phoenix!</h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+  <h2>Welcome to elixir.cologne!</h2>
+  <p class="lead">Your local usergroup for all things Elixir,<br />Erlang, Phoenix, Ecto.</p>
 </div>
 
 <div class="row marketing">
