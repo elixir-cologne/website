@@ -23,7 +23,7 @@
             <li><%= link "Register", to: "/register" %></li>
           <% end %>
         </ul>
-        <span class="logo">elixir.cologne</span>
+        <span class="logo"><a href="/">elixir.cologne</a></span>
       </div>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
