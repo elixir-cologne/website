@@ -25,7 +25,12 @@ defmodule Website.User do
     |> unique_constraint(:email)
     |> validate_format(:email, ~r/@/)
     |> validate_length(:password, min: 5)
-    |> validate_length(:username, min: 5)
+    |> validate_length(:username, min: 3)
     |> validate_length(:username, max: 50)
+  end
+
+  def is_admin?(user) do
+    mail = user.email
+    Enum.member?(Application.get_env(:website, :admins), mail)
   end
 end

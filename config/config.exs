@@ -14,6 +14,8 @@ config :website, Website.Endpoint,
   pubsub: [name: Website.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :website, admins: ["tim@buchwaldt.ws"]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
