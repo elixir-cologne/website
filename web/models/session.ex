@@ -17,6 +17,10 @@ defmodule Website.Session do
 
   def logged_in?(conn), do: !!current_user(conn)
 
+  def is_admin?(conn) do
+    Website.User.is_admin?(current_user(conn))
+  end
+
   defp authenticate(user, password) do
     case user do
       nil -> false
