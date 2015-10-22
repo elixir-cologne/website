@@ -4,3 +4,5 @@ elixir:
 otp_release:
   - 18.0
 sudo: false # to use faster container based build environment
+addons:
+  postgresql: "9.4"
