@@ -5,6 +5,7 @@ defmodule Website.Repo.Migrations.CreateUser do
     create table(:users) do
       add :email, :string
       add :crypted_password, :string
+      add :username, :string
 
       timestamps
     end

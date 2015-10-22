@@ -4,12 +4,13 @@ defmodule Website.User do
   schema "users" do
     field :email, :string
     field :crypted_password, :string
+    field :username, :string
     field :password, :string, virtual: true
 
     timestamps
   end
 
-  @required_fields ~w(email password)
+  @required_fields ~w(email password username)
   @optional_fields ~w()
 
   @doc """
@@ -24,5 +25,7 @@ defmodule Website.User do
     |> unique_constraint(:email)
     |> validate_format(:email, ~r/@/)
     |> validate_length(:password, min: 5)
+    |> validate_length(:username, min: 5)
+    |> validate_length(:username, max: 50)
   end
 end
