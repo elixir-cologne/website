@@ -13,6 +13,8 @@ defmodule Website.MeetupController do
   end
 
   def create(conn, %{"meetup" => meetup_params}) do
+    require_admin(conn)
+
     changeset = Meetup.changeset(%Meetup{}, meetup_params)
 
     if changeset.valid? do
@@ -27,4 +29,11 @@ defmodule Website.MeetupController do
     end
   end
 
+
+  defp require_admin(conn) do
+    unless(Website.Session.is_admin?(conn)) do
+      conn |>
+      redirect(to: "/login")
+    end
+  end
 end

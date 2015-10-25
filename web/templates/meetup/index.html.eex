@@ -9,3 +9,6 @@
   </p>
 </div>
 <% end %>
+<%= if is_admin?(@conn) do %>
+  <%= link "Create new Meetup", to: "/meetups/new" %>
+<%= end %>
