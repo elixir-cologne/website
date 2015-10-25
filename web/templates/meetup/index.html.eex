@@ -1,0 +1,11 @@
+<h2>test</h2>
+
+<%= for meetup <- @meetups do %>
+<div>
+  <h4><%= meetup.title %></h4>
+  <small><%= meetup.date %></small>
+  <p>
+    <%= raw Earmark.to_html(meetup.description) %>
+  </p>
+</div>
+<% end %>

@@ -35,6 +35,8 @@ defmodule Website.Mixfile do
      {:phoenix_html, "~> 2.0"},
      {:phoenix_live_reload, "~> 0.6", only: :dev},
      {:comeonin, "~> 1.0"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:earmark, "~> 0.1.18"}
+   ]
   end
 end

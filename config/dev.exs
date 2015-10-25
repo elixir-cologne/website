@@ -32,4 +32,4 @@ config :website, Website.Repo,
   username: "tim",
   password: "",
   database: "website_dev",
-  size: 10 # The amount of database connections in the pool
+  pool_size: 10 # The amount of database connections in the pool

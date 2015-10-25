@@ -25,6 +25,10 @@ defmodule Website.Router do
     post   "/login",  SessionController, :create
     delete "/logout", SessionController, :delete
 
+    get "/meetups", MeetupController, :index
+    get "/meetups/new", MeetupController, :new
+    post "/meetups", MeetupController, :create
+
   end
 
   # Other scopes may use custom stacks.
