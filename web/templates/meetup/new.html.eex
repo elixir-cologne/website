@@ -1,6 +1,6 @@
-<h2>Create an account</h2>
+<h2>Create a new meetup</h2>
 
-<%= form_for @changeset, registration_path(@conn, :create), fn f -> %>
+<%= form_for @changeset, meetup_path(@conn, :create), fn f -> %>
   <%= if f.errors != [] do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below:</p>
@@ -13,18 +13,23 @@
   <% end %>
 
   <div class="form-group">
-    <label>Email</label>
-    <%= email_input f, :email, class: "form-control" %>
+    <label>Title</label>
+    <%= text_input f, :title, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <label>Username</label>
-    <%= text_input f, :username, class: "form-control" %>
+    <label>Description</label>
+    <%= textarea f, :description, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <label>Password</label>
-    <%= password_input f, :password, class: "form-control" %>
+    <label>Location</label>
+    <%= text_input f, :location, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Date</label>
+    <%= datetime_select f, :date, class: "form-control" %>
   </div>
 
   <div class="form-group">

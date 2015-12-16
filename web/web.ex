@@ -18,7 +18,11 @@ defmodule Website.Web do
 
   def model do
     quote do
-      use Ecto.Model
+      use Ecto.Schema
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query, only: [from: 1, from: 2]
     end
   end
 
@@ -27,7 +31,7 @@ defmodule Website.Web do
       use Phoenix.Controller
 
       alias Website.Repo
-      import Ecto.Model
+      import Ecto
       import Ecto.Query, only: [from: 2]
 
       import Website.Router.Helpers
@@ -62,7 +66,7 @@ defmodule Website.Web do
       use Phoenix.Channel
 
       alias Website.Repo
-      import Ecto.Model
+      import Ecto
       import Ecto.Query, only: [from: 2]
 
     end

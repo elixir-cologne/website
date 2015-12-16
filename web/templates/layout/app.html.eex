@@ -15,6 +15,7 @@
     <div class="container" role="main">
       <div class="header">
         <ul class="nav nav-pills pull-right">
+          <li><%= link "Meetups", to: "/meetups" %></li>
           <%= if logged_in?(@conn) do %>
             <li><%= current_user(@conn).username %></li>
             <li><%= link "Logout", to: session_path(@conn, :delete), method: :delete %></li>
@@ -29,8 +30,7 @@
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-      <%= @inner %>
-
+      <%= render @view_module, @view_template, assigns %>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
