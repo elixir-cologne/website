@@ -21,6 +21,8 @@ defmodule Website.Web do
       use Ecto.Schema
 
       import Ecto
+      import Ecto.Changeset
+      import Ecto.Query, only: [from: 1, from: 2]
     end
   end
 
@@ -30,7 +32,6 @@ defmodule Website.Web do
 
       alias Website.Repo
       import Ecto
-      import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
       import Website.Router.Helpers
@@ -66,7 +67,6 @@ defmodule Website.Web do
 
       alias Website.Repo
       import Ecto
-      import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
     end

@@ -35,9 +35,9 @@ defmodule Website.Meetup do
 
   def next do
     current_time = Ecto.DateTime.local
-    Website.Meetup
-    |> where(:date >= ^current_time)
-    |> order_by(desc: :date)
+    query = from m in Website.Meetup,
+        where: m.date >= ^current_time,
+        order_by: [desc: m.date]
     Website.Repo.one(query)
   end
 end
